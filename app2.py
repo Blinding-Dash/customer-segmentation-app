@@ -21,7 +21,7 @@ def generate_persona_with_gemini(cluster_summary_str, retries=3):
         return "API Key not configured. Persona generation is disabled."
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.0-flash-lite')
     
     prompt = f"""
 You are an expert marketing analyst.
@@ -265,4 +265,5 @@ if selected_features:
         else:
             st.warning("Please select at least three features to create a 3D plot.")
 else:
+
     st.warning("Please select at least one feature from the sidebar to begin clustering.")
